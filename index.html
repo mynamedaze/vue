@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+  <script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="vue">
+    <h3>{{ textSearch }} (длина строки: {{ textSearch.length }})</h3>
+    <input type="text" size="50" v-model="textSearch">
+
+    <button v-on:click="getCities">Грузи</button>
+
+    <ul>
+      <li v-for="hashtag in hashtags"> {{ hashtag }}</li>
+    </ul>
+
+    <ul>
+      <li v-for="city in cities"> {{ city.region }}: {{ city.city}}</li>
+    </ul>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
